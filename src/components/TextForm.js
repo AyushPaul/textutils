@@ -6,16 +6,19 @@ export default function TextForm(props) {
         // console.log("UpperCase was Clicked")
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert("Converted to uPPER Case !!","success")
     }
     const handleLowClick = () =>{
         // console.log("UpperCase was Clicked")
         let newText = text.toLocaleLowerCase();
         setText(newText)
+        props.showAlert("Converted to lower Case !!","success")
     }
     const handleClearClick = () =>{
         // console.log("UpperCase was Clicked")
         // let newText = text.toLocaleLowerCase();
         setText("")
+        props.showAlert("Cleared Text","danger")
     }
     const handleOnChange = (event) =>{
         // console.log("On Change")
@@ -24,6 +27,7 @@ export default function TextForm(props) {
     const handleExtraSpaces = () =>{
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert("Cleared Spaces","danger")
     }
     const [text,setText] = useState("")
     
