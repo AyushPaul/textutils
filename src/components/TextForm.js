@@ -21,6 +21,10 @@ export default function TextForm(props) {
         // console.log("On Change")
         setText(event.target.value)
     }
+    const handleExtraSpaces = () =>{
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "))
+    }
     const [text,setText] = useState("")
     
   return (
@@ -33,6 +37,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UPPERCASE</button>
         <button className="btn btn-primary mx-2" onClick={handleLowClick}>Convert to lowercase</button>
         <button className="btn btn-danger mx-2" onClick={handleClearClick}>Clear Text</button>
+        <button className="btn btn-danger mx-2" onClick={handleExtraSpaces}>Remove Spaces</button>
     </div>
     <div className="container my-4">
         <h2>Your Text Summary</h2>
