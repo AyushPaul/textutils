@@ -9,7 +9,7 @@ export default function About() {
 
     let [btnText,setbtnText] = useState("Enable Dark Mode")
     const toggleClick = () =>{
-        if(myStyle.color == 'white')
+        if(myStyle.color === 'white')
         {
             setmySyle({
                 color: "black",
