@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
@@ -11,9 +11,11 @@ function App() {
     if(mode === 'light')
     {
       setmode("dark")
+      document.body.style.backgroundColor = '#343536'
     }
     else{
       setmode("light")
+      document.body.style.backgroundColor = 'white'
     }
   }
   return (
@@ -22,7 +24,7 @@ function App() {
 <Navbar title="TextUtils" aboutText="About TextUtils" mode = {mode} toggleMode={toggleMode}/>
 {/* <Navbar/> */}
 <div className="container my-3">
-<TextForm heading="Enter the Text to Analyze"/>
+<TextForm heading="Enter the Text to Analyze " mode = {mode}/>
 {/* <About/> */}
 </div>
 
