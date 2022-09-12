@@ -49,17 +49,16 @@ function App() {
     <Navbar title="TextUtils" aboutText="About TextUtils" mode = {mode} toggleMode={toggleMode}/>
     <Alerts alert={alert}/>
     <Switch>
-        <Route path="/about" element={<div className="container my-3">
+        <Route exact path="/about" element={<div className="container my-3">
             {/* <TextForm heading="Enter the Text to Analyze " mode = {mode} showAlert={showAlert}/> */}
-            <About/>
-          </div>}>
+            <About mode={mode}/>
+            </div>}></Route>
+        <Route exact path="/" element={<div className="container my-3">
+    <TextForm heading="Enter the Text to Analyze " mode = {mode} showAlert={showAlert}/>
+    {/* <About/> */}
+</div>}>
         </Route>
-        <Route path="/" element={<div className="container my-3">
-            <TextForm heading="Enter the Text to Analyze " mode = {mode} showAlert={showAlert}/>
-            {/* <About/> */}
-          </div>}>
-        </Route>
-      </Switch>
+    </Switch>
   </Router>
 {/* <Navbar/> */}
 
